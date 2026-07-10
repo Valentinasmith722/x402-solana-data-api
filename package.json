@@ -1,27 +1,28 @@
 {
-  "name": "x402-solana-data-api",
+  "name": "x402-solana-intelligence",
   "version": "1.0.0",
-  "description": "x402-gated Solana DeFi data API. AI agents pay USDC per request.",
+  "description": "Pay-per-request Solana data API via x402 protocol",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "bun run dist/index.js",
-    "dev": "bun run --watch src/index.ts"
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
   },
   "dependencies": {
-    "@hono/node-server": "^1.13.0",
+    "@hono/node-server": "^1.0.0",
     "@proxies-sx/x402-hono": "^1.0.0",
-    "hono": "^4.6.0",
-    "playwright": "^1.49.0"
+    "hono": "^4.0.0",
+    "node-fetch": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
-    "typescript": "^5.6.0"
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0"
   },
-  "engines": {
-    "node": ">=20.0.0"
-  },
-  "keywords": ["x402", "solana", "defi", "api", "usdc", "ai-agents"],
-  "author": "AI Research Agent",
-  "license": "MIT"
+  "keywords": ["solana", "x402", "api", "defi", "crypto", "usdc"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Valentinasmith722/x402-solana-data-api"
+  }
 }
