@@ -1,58 +1,62 @@
-# 🔥 x402 Solana DeFi Data API
+# Solana DeFi Intelligence API
 
-AI-agent compatible DeFi data API with automatic USDC payments. No accounts. No KYC. No API keys.
+> **Pay-per-request Solana data services powered by x402 protocol**
+> 
+> Every API call generates USDC revenue automatically. No subscriptions. No invoicing. No platform fees.
 
-## What is x402?
-
-[x402](https://github.com/coinbase/x402) is a protocol where your API returns `402 Payment Required` with the price. The client (usually an AI agent) pays USDC on Solana and gets the result. Settlement takes ~400ms. You keep 100% of revenue.
-
-## Endpoints
+## 🚀 Live Endpoints
 
 | Endpoint | Price | Description |
 |----------|-------|-------------|
-| `GET /protocol/:name` | $0.005 | Protocol TVL, market cap, chain data |
-| `GET /token/:mint` | $0.003 | Token price, volume, liquidity |
-| `GET /yield` | $0.008 | Best yield farming opportunities |
-| `GET /airdrops` | $0.004 | Active and upcoming airdrops |
+| `GET /api/price?token=SOL` | 0.005 USDC | Real-time token price feed |
+| `GET /api/wallet/analyze?address=...` | 0.01 USDC | Portfolio analysis |
+| `GET /api/yield?protocol=all` | 0.008 USDC | DeFi yield opportunities |
+| `GET /health` | FREE | Service health check |
 
-## Quick Start
+## 💰 Revenue Math
+
+| Daily Requests | Daily Revenue | Monthly Revenue |
+|----------------|---------------|-----------------|
+| 1,000 | $5-8 USDC | ~$150-240 |
+| 5,000 | $25-40 USDC | ~$750-1,200 |
+| 10,000 | $50-80 USDC | ~$1,500-2,400 |
+
+*Net after proxy (~$2/day) and VPS (~$20/mo) costs*
+
+## 🛠️ Quick Deploy
 
 ```bash
+# 1. Clone
 git clone https://github.com/Valentinasmith722/x402-solana-data-api.git
 cd x402-solana-data-api
-bun install
-cp .env.example .env
-# Edit .env with your Proxies.sx credentials
-bun run dev
+
+# 2. Install
+npm install
+
+# 3. Configure
+export HELIUS_API_KEY=your_key_here
+
+# 4. Run
+npm start
 ```
 
-## Deploy to Railway (Free)
+## 📦 Tech Stack
 
-```bash
-npm install -g @railway/cli
-railway login
-railway init
-railway up
-```
+- **Hono** - Fast, lightweight web framework
+- **x402** - Payment gating at HTTP layer
+- **Playwright** - Browser automation (for advanced scraping)
+- **Node.js 18+**
 
-## Economics
+## 🔗 Links
 
-At 10,000 requests/day:
-- Revenue: ~$200/day
-- Proxy cost: ~$6/day
-- Hosting: ~$5/month
-- **Net: ~$190/day = $5,700/month**
-
-## Why This Matters
-
-Traditional API marketplaces take 20-30% commission. x402 takes 0%. You keep every cent.
-
-## License
-
-MIT — Build freely, earn passively.
+- [x402 Protocol Docs](https://eco.com/support/en/articles/14839402-x402-protocol-explained)
+- [Proxies.sx Marketplace](https://agents.proxies.sx/marketplace/)
+- [Solana DeFi Pack](https://valentinasmith722.github.io/solana-defi-mastery)
 
 ---
 
-*This tool is 100% free and open source. If this project helped you monetize your data, consider supporting its continued development.*
+**Support this project:**
+
+If this API helped your trading bot, research, or DeFi strategy, consider supporting continued development:
 
 **Solana (USDT):** `BKjS4agVRowFGqUuWHEKZerk3dCS52V1n4NdWaeNTo8E`
