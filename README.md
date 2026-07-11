@@ -1,27 +1,27 @@
-# Solana DeFi Intelligence API
+# 🚀 Solana DeFi Intelligence API
 
-> **Pay-per-request Solana data services powered by x402 protocol**
+> **Pay-per-request DeFi data powered by x402 protocol**
 > 
-> Every API call generates USDC revenue automatically. No subscriptions. No invoicing. No platform fees.
+> Every API call generates USDC revenue automatically. No subscriptions. No invoicing. 100% of income goes to the builder.
 
-## 🚀 Live Endpoints
+## 💰 Live Endpoints
 
-| Endpoint | Price | Description |
-|----------|-------|-------------|
-| `GET /api/price?token=SOL` | 0.005 USDC | Real-time token price feed |
-| `GET /api/wallet/analyze?address=...` | 0.01 USDC | Portfolio analysis |
-| `GET /api/yield?protocol=all` | 0.008 USDC | DeFi yield opportunities |
-| `GET /health` | FREE | Service health check |
+| Endpoint | Price | Description | Example |
+|----------|-------|-------------|---------|
+| `GET /api/v1/prices?token=SOL` | 0.005 USDC | Real-time token prices | `curl /api/v1/prices?token=SOL` |
+| `GET /api/v1/protocols?name=jupiter` | 0.008 USDC | Protocol analysis & TVL | `curl /api/v1/protocols` |
+| `GET /api/v1/strategies?risk=moderate` | 0.01 USDC | Curated yield strategies | `curl /api/v1/strategies` |
+| `GET /api/v1/airdrops?status=active` | 0.005 USDC | Active airdrop tracker | `curl /api/v1/airdrops` |
+| `POST /api/v1/optimize` | 0.015 USDC | AI portfolio optimizer | `curl -X POST /api/v1/optimize` |
 
-## 💰 Revenue Math
+## 📊 Revenue Projections
 
 | Daily Requests | Daily Revenue | Monthly Revenue |
 |----------------|---------------|-----------------|
-| 1,000 | $5-8 USDC | ~$150-240 |
-| 5,000 | $25-40 USDC | ~$750-1,200 |
-| 10,000 | $50-80 USDC | ~$1,500-2,400 |
-
-*Net after proxy (~$2/day) and VPS (~$20/mo) costs*
+| 100 | $0.50-1.50 | ~$15-45 |
+| 1,000 | $5-15 | ~$150-450 |
+| 5,000 | $25-75 | ~$750-2,250 |
+| 10,000 | $50-150 | ~$1,500-4,500 |
 
 ## 🛠️ Quick Deploy
 
@@ -34,29 +34,30 @@ cd x402-solana-data-api
 npm install
 
 # 3. Configure
-export HELIUS_API_KEY=your_key_here
+export HELIUS_API_KEY=your_key  # Optional: for enhanced data
 
 # 4. Run
+npm run build
 npm start
 ```
 
-## 📦 Tech Stack
-
-- **Hono** - Fast, lightweight web framework
-- **x402** - Payment gating at HTTP layer
-- **Playwright** - Browser automation (for advanced scraping)
-- **Node.js 18+**
-
 ## 🔗 Links
 
-- [x402 Protocol Docs](https://eco.com/support/en/articles/14839402-x402-protocol-explained)
-- [Proxies.sx Marketplace](https://agents.proxies.sx/marketplace/)
-- [Solana DeFi Pack](https://valentinasmith722.github.io/solana-defi-mastery)
+- **GitHub**: https://github.com/Valentinasmith722/x402-solana-data-api
+- **Landing Page**: https://valentinasmith722.github.io/solana-defi-mastery
+- **Wallet**: `BKjS4agVRowFGqUuWHEKZerk3dCS52V1n4NdWaeNTo8E`
+
+## 📈 Tech Stack
+
+- **Hono** — Fast, lightweight web framework
+- **x402** — Payment gating at HTTP layer (0% platform fees)
+- **TypeScript** — Type-safe development
+- **Node.js 18+**
 
 ---
 
 **Support this project:**
 
-If this API helped your trading bot, research, or DeFi strategy, consider supporting continued development:
+If this API helped your trading, research, or development, consider supporting continued development:
 
 **Solana (USDT):** `BKjS4agVRowFGqUuWHEKZerk3dCS52V1n4NdWaeNTo8E`
